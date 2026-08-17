@@ -27,11 +27,36 @@ int main()
     if(avg >= 35.0)
     {
         printf("Pass!\n");
-        //grades if - else if ladder
+
+        /*
+        A (85–100): Excellent performance.
+        B (70–84): Good performance.
+        C (50–69): Satisfactory performance.
+        D (35–49): Passing performance.
+        F (0–34): Failing performance.
+        */
+        
+        if(avg > 85.0 && avg<=100.0)
+        {
+            printf("\nGrade = A\n");
+        }
+        else if(avg > 70.0 && avg<=84.0)
+        {
+            printf("\nGrade = B\n");
+        }
+        else if(avg > 50.0 && avg<=69.0)
+        {
+            printf("\nGrade = C\n");
+        }
+        else if(avg > 35.0 && avg<=49.0)
+        {
+            printf("\nGrade = D\n");
+        }
+        
     }
     else
     {
-        printf("Fail :(\n");
+        printf("Fail :(\nGrade = F\n");
     }
     return 0;
 
