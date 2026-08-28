@@ -10,8 +10,8 @@ report their minimum, maximum, and average without storing them all.
 int main()
 {
     int size=0, n=0;
-    int max = INT_MAX;
-    int min=INT_MIN;
+   int max = 0;//INT_MAX;  -- nothing will be bigger than infinity 
+    int min = 0;//INT_MIN; -- nothing will be smaller than - infinity
 
     printf("Enter number: \n");
     scanf("%d", &size);
@@ -21,6 +21,12 @@ int main()
         printf("Enter number: \n");
         scanf("%d", &n);
 
+        //to make sure only the numbers of the stream get to be compared with each other.
+        if(i==0)
+        {   
+            min = n;
+            max = n;
+        }
         if(n < min)
         {
             min = n;
