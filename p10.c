@@ -4,6 +4,12 @@ Compute 1 + 1/2 + 1/3 + … + 1/n.
 Watch what happens if the division is done with integers.
 */
 
+/*
+harmonic mean converges very slow to a a limit
+gradual growth followed by slowing down
+
+*/
+
 #include <stdio.h>
 
 void harmonic_floating(int n)
