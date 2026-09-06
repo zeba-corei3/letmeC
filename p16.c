@@ -3,7 +3,7 @@ Ask for a password, allowing up to 3 attempts:
 print "Access granted" on success or "Account locked" after 
 the third failure. Variant: retry forever until correct.
 */
-
+#include <string.h>
 #include <stdio.h>
 
 int main()
@@ -14,8 +14,20 @@ int main()
     for(int i=0; i<3; i++)
     {
         printf("Enter password: ");
-        scanf("%s", &p);
+        scanf("%s", p);
+        printf("Entered: %s\n", p);
 
-        // if()
+        if(strcmp(p, "abc") == 0)
+        {
+            printf("Correct pw\n");
+            return 0;
+            // break;
+        }
+        else
+        {
+            printf("Wrong pw\n");
+        }
     }
+    printf("Three attempts done. GOod Bye.\n");
+    return -1;
 }
