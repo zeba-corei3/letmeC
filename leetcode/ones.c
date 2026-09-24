@@ -25,34 +25,31 @@ nums[i] is either 0 or 1.
 #include <stdio.h>
 
 int findMaxConsecutiveOnes(int* nums, int numsSize) {
-    int cnt = 0, final = 0;
+    int c=0, cmax = 0;
 
     for(int i=0; i<numsSize; i++)
     {
-        printf("\nfor %d nums = %d\n", i, nums[i]);
-
-        if(nums[i] == 1 && cnt == 0)
+        // printf("\n\ni = %d\tnums = %d\n", i, nums[i]);
+        
+        if(nums[i] == 0)
         {
-            cnt=1;
-            printf("condition if: cnt = %d\t", cnt);
+            // printf("current is 0\t");
+            c = 0;
         }
-        else if(nums[i]==1 && nums[i-1] == 1)
+        else
         {
-            final = cnt++;
-            printf("condition else if: cnt = %d\t", cnt);
+            // printf("C was %d,", c);
+            if(nums[i] == 1)
+            {c++;}
+            // printf(" now is %d", c);
         }
-        else{
-            final = cnt;
-            cnt =0;
-            printf("condition else: cnt = %d\t", cnt);
-            continue;
-        }
-        printf("\n");
+         if(cmax < c)
+            {
+                // printf("cmax = %d\tc=%d\t", cmax, c);
+                cmax = c;
+            }
     }
-    final = cnt;
-
-    printf("Count = %d\n", final);
-    return final;
+    return cmax;
 }
 
 int main()
