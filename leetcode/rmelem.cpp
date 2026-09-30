@@ -63,46 +63,29 @@ using namespace std;
 
 // function definition
 int removeElement(vector<int> nums, int val) {
-    int size = nums.size();
-    int r=size-1, k=0;
-    // cout << "Val = "<<val;
-
-    if(size == 0)
-    return 0;
-    
-    for(int i=0; i<size; i++)
+        //attempt 3
+    int n = nums.size();
+    int k = 0;
+    for(int i=0; i<n; i++)
     {
-        if(i<r){
-        if(nums[i] == val)
+        if(nums[i] != val)
         {
-            // cout << "Before at "<<i<<" = "<<nums[i]<<"\tat r = "<<nums[r]<<"\n";
-            if(nums[r] == val)
-            {
-                r--;
-            }
-            swap(nums[i], nums[r]);
-            // cout << "After at "<<i<<" = "<<nums[i]<<"\tat r = "<<nums[r]<<"\n";
+            nums[k] = nums[i];
+            k++;
         }
-        k = i;
-        // cout << "i = "<<i<<"r = "<<r<<"\n";
-        // for (int i = 0; i < 8; i++) {
-        //     cout << nums[i] << " ";
-        // }
-        // cout << "\n\n";
+        for (int i = 0; i < n; i++) {
+            cout << nums[i] << " ";
+        }
+        cout << "\n";
     }
-    else
-    {
-        break;
-    }
-    }
-
-    return k+1;
+    return k;
 }
 
+//just for gags
 int main() {
 
-    // declaring and initializing an array of size 8
-    
+    // test case 
+  // not neccessarily needed.
     std::vector<int> nums = {0, 1, 2, 2, 3, 0, 4, 2};
     
     // printing array elements
