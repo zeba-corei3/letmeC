@@ -36,6 +36,34 @@ using namespace std;
 
 string longestCommonPrefix(vector<string>& strs){
 
-    
+    string common = "";
+    int rows = strs.size(), cols = strs[0].size();
+
+    for(int i=0; i<cols; i++)
+    {
+        char c = strs[0][i];
+        for(int j=1; j<rows; j++)
+        {
+            if(strs[j][i] != c)
+            {
+                return common;
+            }
+        }
+        common.push_back(c);
+    }
+
+    return common;
 
 }
+
+int main()
+{
+    vector<string> strs = {"flower","f","flight"};
+    string c = longestCommonPrefix(strs);
+
+    cout << "least common prefix: \'" << c << "\'" << endl;
+
+    return 0;
+}
+
+
